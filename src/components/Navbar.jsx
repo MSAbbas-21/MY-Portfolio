@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { personalData } from '../data/portfolioData';
 import { Menu, X, FileDown, ArrowUpRight } from 'lucide-react';
+import { scrollToSection } from '../utils/scroll';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -8,6 +9,7 @@ const NAV_ITEMS = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Resume', href: '#resume' },
   { label: 'Education', href: '#education' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
@@ -24,7 +26,7 @@ export default function Navbar() {
 
       // Detect active section
       const sections = NAV_ITEMS.map((item) => item.href.substring(1));
-      const scrollPosition = window.scrollY + 120;
+      const scrollPosition = window.scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -39,33 +41,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection(href);
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0B0F17]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30 py-3.5'
-          : 'bg-transparent py-5'
+          ? 'bg-[#0B0F17]/95 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30 py-3'
+          : 'bg-[#0B0F17]/70 backdrop-blur-sm py-4 border-b border-slate-900/60'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,7 +78,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+          <nav className="hidden xl:flex items-center gap-1.5" aria-label="Main Navigation">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
@@ -111,33 +98,50 @@ export default function Navbar() {
             })}
           </nav>
 
+          {/* Compact links for medium screens (lg) */}
+          <nav className="hidden lg:flex xl:hidden items-center gap-1" aria-label="Main Navigation Compact">
+            {NAV_ITEMS.slice(0, 6).map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`px-2 py-1 rounded-lg text-xs font-medium transition-all ${
+                    isActive
+                      ? 'text-indigo-300 bg-indigo-500/15'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
+
           {/* Action Button: Download Resume */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2.5">
+            <button
+              type="button"
+              onClick={(e) => handleNavClick(e, '#resume')}
+              className="px-3.5 py-2 text-xs xl:text-sm font-semibold rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:text-white transition-all"
+            >
+              <span>View Resume</span>
+            </button>
+
             <a
               href={personalData.resumePath}
               download="M_S_Mohammad_Abbas_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs xl:text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs xl:text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 transition-all duration-200 hover:-translate-y-0.5"
               aria-label="Download Resume PDF"
             >
               <FileDown className="w-4 h-4" />
-              <span>Download Resume</span>
+              <span>Download PDF</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <a
-              href={personalData.resumePath}
-              download="M_S_Mohammad_Abbas_Resume.pdf"
-              className="p-2 text-indigo-400 hover:text-indigo-300 hover:bg-slate-800 rounded-lg transition-colors"
-              title="Download Resume"
-              aria-label="Download Resume"
-            >
-              <FileDown className="w-5 h-5" />
-            </a>
-
+          <div className="flex xl:hidden items-center gap-2">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
@@ -153,7 +157,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {isOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#0B0F17]/98 backdrop-blur-xl border-b border-slate-800 p-6 flex flex-col justify-between overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="xl:hidden fixed inset-x-0 top-[61px] bottom-0 bg-[#0B0F17]/98 backdrop-blur-xl border-b border-slate-800 p-6 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200">
           <nav className="flex flex-col space-y-2">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1);
@@ -175,11 +179,17 @@ export default function Navbar() {
           </nav>
 
           <div className="pt-6 border-t border-slate-800/80 mt-6 flex flex-col gap-3">
+            <button
+              type="button"
+              onClick={(e) => handleNavClick(e, '#resume')}
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm transition-all"
+            >
+              <span>View On-Page Resume Section</span>
+            </button>
+
             <a
               href={personalData.resumePath}
               download="M_S_Mohammad_Abbas_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 transition-all text-sm"
             >
               <FileDown className="w-4 h-4" />

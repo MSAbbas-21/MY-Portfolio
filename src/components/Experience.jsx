@@ -65,10 +65,11 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Role Summary */}
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-4">
-                  {exp.summary}
-                </p>
+                {/* Enterprise Application Context */}
+                <div className="mt-4 p-3.5 rounded-xl bg-indigo-950/25 border border-indigo-900/40 flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <span className="font-semibold text-slate-300">Enterprise Environment:</span>
+                  <span className="font-mono text-indigo-300 bg-indigo-900/40 px-2.5 py-1 rounded-md border border-indigo-700/50">{exp.context}</span>
+                </div>
 
                 {/* Key Responsibilities list */}
                 <div className="mt-5 space-y-3">

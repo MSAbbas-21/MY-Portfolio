@@ -2,11 +2,11 @@ import React from 'react';
 import { personalData } from '../data/portfolioData';
 import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { scrollToSection } from '../utils/scroll';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -17,6 +17,7 @@ export default function Footer() {
     { label: 'Skills', href: '#skills' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Resume', href: '#resume' },
     { label: 'Education', href: '#education' },
     { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
@@ -46,7 +47,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Passionate about building dependable backend systems, well-structured REST APIs, and efficient database architectures with Python and Django.
+              Passionate about building dependable backend systems, well-structured REST APIs, and efficient database architectures with Python, Django, and modern web standards.
             </p>
 
             <div className="flex items-center gap-3 pt-1">
@@ -90,7 +91,11 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="hover:text-indigo-400 transition-colors py-1 text-slate-400 hover:translate-x-0.5 transform duration-150 inline-block"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className="hover:text-indigo-400 transition-colors py-1 text-slate-400 hover:translate-x-0.5 transform duration-150 inline-block cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -121,7 +126,7 @@ export default function Footer() {
               <button
                 type="button"
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 hover:text-white transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 hover:text-white transition-all shadow-sm cursor-pointer"
               >
                 <ArrowUp className="w-3.5 h-3.5" />
                 <span>Back to Top</span>

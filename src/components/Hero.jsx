@@ -5,21 +5,19 @@ import {
   FileDown, 
   Mail, 
   Terminal, 
-  CheckCircle2
+  CheckCircle2, 
+  ChevronDown,
+  FileText
 } from 'lucide-react';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Hero() {
-  const scrollTo = (id) => {
-    const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 overflow-hidden"
+      className="relative min-h-[95vh] flex flex-col justify-between pt-24 pb-8 overflow-hidden"
     >
-      {/* Background Subtle Gradient Glows (Tasteful charcoal / dark violet / deep blue) */}
+      {/* Background Subtle Gradient Glows */}
       <div 
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-indigo-900/20 via-violet-900/15 to-blue-900/20 rounded-full blur-3xl pointer-events-none -z-10" 
         aria-hidden="true"
@@ -35,7 +33,8 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* Main Hero Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Introduction & Call-to-Actions */}
@@ -70,7 +69,7 @@ export default function Hero() {
 
             {/* Key Skill Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['Python', 'Django', 'Django REST Framework', 'Oracle 19c / SQL', 'JavaScript'].map((tech) => (
+              {['Python', 'Django', 'Django REST Framework (DRF)', 'Oracle 19c / SQL', 'JavaScript'].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 text-xs font-mono rounded-md bg-slate-800/90 text-slate-300 border border-slate-700/60"
@@ -80,30 +79,40 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Action Buttons: View Projects, Download Resume, Contact Me */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <button
                 type="button"
-                onClick={() => scrollTo('#projects')}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-indigo-600/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                onClick={() => scrollToSection('#projects')}
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-indigo-600/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
               >
                 <span>View My Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
+              <button
+                type="button"
+                onClick={() => scrollToSection('#resume')}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700 font-medium text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
+              >
+                <FileText className="w-4 h-4 text-indigo-400" />
+                <span>View Resume</span>
+              </button>
+
               <a
                 href={personalData.resumePath}
                 download="M_S_Mohammad_Abbas_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700 font-medium text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-sm font-medium transition-all"
+                title="Direct PDF Download"
               >
                 <FileDown className="w-4 h-4 text-indigo-400" />
-                <span>Download Resume</span>
+                <span className="hidden sm:inline">PDF</span>
               </a>
 
               <button
                 type="button"
-                onClick={() => scrollTo('#contact')}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-transparent hover:bg-slate-800/60 text-slate-300 hover:text-white border border-slate-700/60 font-medium text-sm sm:text-base transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                onClick={() => scrollToSection('#contact')}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-transparent hover:bg-slate-800/60 text-slate-300 hover:text-white border border-slate-700/60 font-medium text-sm sm:text-base transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-slate-400" />
                 <span>Contact Me</span>
@@ -118,7 +127,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Enterprise Trainee Experience</span>
+                <span>Live Enterprise App Trainee</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -128,7 +137,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Abstract Developer Card (No fake photo) */}
+          {/* Right Column: Code Window Card */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="w-full max-w-md bg-gradient-to-b from-[#131B2E] to-[#0D1322] border border-slate-800/90 rounded-2xl p-5 shadow-2xl shadow-indigo-950/40 relative">
               
@@ -169,7 +178,7 @@ export default function Hero() {
                     Junior Developer Trainee
                   </p>
                   <p className="text-xs text-slate-400">
-                    Unique Force • Bengaluru
+                    Unique Force • Trade-Finance App
                   </p>
                 </div>
               </div>
@@ -179,7 +188,7 @@ export default function Hero() {
                 <p className="text-slate-500"># Engineering Profile Definition</p>
                 <p>
                   <span className="text-violet-400">class</span>{' '}
-                  <span className="text-indigo-300 font-semibold">BackendEngineer</span>
+                  <span className="text-indigo-300 font-semibold">FullStackEngineer</span>
                   <span className="text-slate-400">:</span>
                 </p>
                 <div className="pl-4 space-y-1 text-slate-300">
@@ -188,7 +197,7 @@ export default function Hero() {
                     <span className="text-emerald-300">"BCA (8.5 CGPA)"</span>
                   </p>
                   <p>
-                    <span className="text-slate-400">core_stack</span> = [
+                    <span className="text-slate-400">stack</span> = [
                     <span className="text-amber-300">"Python"</span>,{' '}
                     <span className="text-amber-300">"Django"</span>,{' '}
                     <span className="text-amber-300">"DRF"</span>]
@@ -199,19 +208,18 @@ export default function Hero() {
                     <span className="text-amber-300">"SQLite"</span>]
                   </p>
                   <p>
-                    <span className="text-slate-400">mindset</span> ={' '}
-                    <span className="text-emerald-300">"Clean Code & Reliability"</span>
+                    <span className="text-slate-400">focus</span> ={' '}
+                    <span className="text-emerald-300">"REST APIs & Web Apps"</span>
                   </p>
                 </div>
                 <p className="pt-1">
                   <span className="text-violet-400">def</span>{' '}
-                  <span className="text-blue-300">build_api</span>
-                  <span className="text-slate-400">(self, request):</span>
+                  <span className="text-blue-300">get_status</span>
+                  <span className="text-slate-400">(self):</span>
                 </p>
                 <p className="pl-4">
                   <span className="text-violet-400">return</span>{' '}
-                  <span className="text-emerald-300">Response</span>
-                  <span className="text-slate-400">(status=200, secure=True)</span>
+                  <span className="text-emerald-300">"Ready for New Challenges"</span>
                 </p>
               </div>
 
@@ -223,11 +231,11 @@ export default function Hero() {
                 </div>
                 <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
                   <div className="text-base font-bold text-violet-400">3+</div>
-                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Web Projects</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Full-Stack Apps</div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
                   <div className="text-base font-bold text-blue-400">Enterprise</div>
-                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Experience</div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-wider">Trade-Finance</div>
                 </div>
               </div>
 
@@ -236,6 +244,24 @@ export default function Hero() {
 
         </div>
       </div>
+
+      {/* Dedicated Clickable Scroll Down Indicator */}
+      <div className="w-full flex justify-center pb-2 pt-4">
+        <button
+          type="button"
+          onClick={() => scrollToSection('#about')}
+          className="group flex flex-col items-center gap-1.5 text-xs text-slate-400 hover:text-indigo-400 transition-colors focus:outline-none cursor-pointer"
+          aria-label="Scroll down to About section"
+        >
+          <span className="text-[11px] font-mono tracking-widest uppercase text-slate-400 group-hover:text-indigo-300">
+            Scroll Down
+          </span>
+          <div className="w-8 h-8 rounded-full border border-slate-800 group-hover:border-indigo-500/50 flex items-center justify-center bg-slate-900/60 group-hover:bg-indigo-950/40 transition-all">
+            <ChevronDown className="w-4 h-4 animate-bounce text-indigo-400" />
+          </div>
+        </button>
+      </div>
+
     </section>
   );
 }

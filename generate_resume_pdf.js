@@ -1,72 +1,121 @@
 import fs from 'fs';
 
-// Helper to generate a clean PDF containing resume content
+// Helper to generate a clean PDF containing resume content exactly as presented
 function createSimplePdf() {
   const content = `BT
-/F1 20 Tf
-50 780 Td
-(M. S. Mohammad Abbas) Tj
+/F1 18 Tf
+50 785 Td
+(M S MOHAMMAD ABBAS) Tj
+0 -22 Td
+/F1 10 Tf
+(Software Engineer | Full Stack Developer | Python | Django | REST APIs | JavaScript) Tj
+0 -16 Td
+/F1 9 Tf
+(+91 74117 25609 | mohammedabbas50605@gmail.com | github.com/MSAbbas-21 | linkedin.com/in/mohammed-abbas) Tj
 0 -26 Td
 /F1 12 Tf
-(Software Engineer | Python & Django Full Stack Developer) Tj
-0 -20 Td
-/F1 10 Tf
-(Email: mohammedabbas50605@gmail.com | Phone: +91 74117 25609) Tj
-0 -15 Td
-(GitHub: github.com/MSAbbas-21 | LinkedIn: linkedin.com/in/mohammed-abbas) Tj
-0 -30 Td
-/F1 14 Tf
 (PROFESSIONAL SUMMARY) Tj
-0 -18 Td
-/F1 10 Tf
-(Entry-level software engineer with a BCA degree (8.5 CGPA) and hands-on experience as a Junior Developer Trainee) Tj
+0 -15 Td
+/F1 8 Tf
+(Entry-level Software Engineer \\(BCA, 8.5 CGPA\\) with hands-on experience across the software development life cycle: requirement) Tj
+0 -11 Td
+(analysis, design, coding, testing, debugging, and support. Junior Developer Trainee building and maintaining features for a live) Tj
+0 -11 Td
+(enterprise trade-finance application, with experience in version control, bug fixing, and code reviews. Full stack developer skilled) Tj
+0 -11 Td
+(in Python, Django, Django REST Framework, JavaScript, SQL, HTML5, CSS3, and Tailwind CSS. Completed Intro to GenAI certification.) Tj
+0 -22 Td
+/F1 12 Tf
+(TECHNICAL SKILLS) Tj
 0 -14 Td
-(at Unique Force. Proficient in Python, Django, REST APIs, SQL, JavaScript, and enterprise application troubleshooting.) Tj
-0 -30 Td
-/F1 14 Tf
-(WORK EXPERIENCE) Tj
-0 -18 Td
-/F1 11 Tf
-(Junior Developer Trainee - Unique Force (May 2026 - Present)) Tj
-0 -16 Td
-/F1 10 Tf
-(- Writing and executing Oracle SQL queries for data retrieval, validation, and troubleshooting.) Tj
-0 -14 Td
-(- Investigating issues across application and database layers.) Tj
-0 -14 Td
-(- Developing client-side functionality and form validation with JavaScript.) Tj
-0 -14 Td
-(- Gained exposure to IBM WebSphere Application Server 9 and assisted with application troubleshooting.) Tj
-0 -14 Td
-(- Collaborated with senior developers to investigate bugs and implement assigned fixes.) Tj
-0 -30 Td
-/F1 14 Tf
-(EDUCATION) Tj
-0 -18 Td
-/F1 10 Tf
-(- Bachelor of Computer Applications (BCA) - Sri Matha Degree College | CGPA: 8.5) Tj
-0 -14 Td
-(- Complete Python Full Stack Development Course - J Spiders, Bengaluru) Tj
-0 -14 Td
-(- Pre-University Course (PUC) - Little Flower Composite PU College | 70%) Tj
-0 -30 Td
-/F1 14 Tf
+/F1 8 Tf
+(Languages: Python, JavaScript, SQL) Tj
+0 -11 Td
+(Backend: Django, Django REST Framework \\(DRF\\), REST APIs, Backend Development, Django ORM, MVT Architecture) Tj
+0 -11 Td
+(Frontend: HTML5, CSS3, JavaScript, Tailwind CSS, GUI Development, Responsive Web Design) Tj
+0 -11 Td
+(Database: SQLite, Relational Database Design, CRUD Operations, Oracle Database 19c) Tj
+0 -11 Td
+(Core Concepts: OOP, Data Structures & Algorithms, SDLC, Requirement Analysis, Software Design, Auth, Session Management) Tj
+0 -11 Td
+(Tools: Git, GitHub, SVN \\(TortoiseSVN\\), VS Code, JSON, Debugging, Bug Fixing, Problem Determination, Code Reviews) Tj
+0 -11 Td
+(AI & Integration: Generative AI \\(fundamentals\\), REST API Integration, Full Stack Development, IBM WebSphere App Server 9) Tj
+0 -22 Td
+/F1 12 Tf
+(PROFESSIONAL EXPERIENCE) Tj
+0 -15 Td
+/F1 9 Tf
+(Junior Developer Trainee | Unique Force                                              May 2026 - Present) Tj
+0 -13 Td
+/F1 8 Tf
+(- Working in an enterprise application environment involving Oracle Database 19c, JavaScript, and web technologies.) Tj
+0 -11 Td
+(- Writing and executing SQL queries in Oracle 19c for data retrieval, validation, and troubleshooting.) Tj
+0 -11 Td
+(- Analyzing application issues by tracing data between the application and database layers.) Tj
+0 -11 Td
+(- Working with JavaScript for client-side functionality, form handling, validation, and dynamic web-page behavior.) Tj
+0 -11 Td
+(- Gaining exposure to IBM WebSphere Application Server 9 and understanding its role in enterprise application environments.) Tj
+0 -11 Td
+(- Assisting with application troubleshooting across the frontend, application server, and database layers.) Tj
+0 -11 Td
+(- Working with senior developers to investigate bugs, understand application workflows, and implement assigned fixes.) Tj
+0 -22 Td
+/F1 12 Tf
 (PROJECTS) Tj
+0 -15 Td
+/F1 9 Tf
+(ShopSphere - Full-Stack E-Commerce Web Application) Tj
+0 -12 Td
+/F1 8 Tf
+(Python | Django | Django REST Framework | SQLite | Tailwind CSS | Git) Tj
+0 -11 Td
+(- Developed full stack application with RESTful APIs for product, category, cart, and order management using DRF and Django ORM.) Tj
+0 -11 Td
+(- Implemented authentication functionality, structured application data with Django models, and built responsive Tailwind UI.) Tj
+0 -15 Td
+/F1 9 Tf
+(College Voting Management System) Tj
+0 -12 Td
+/F1 8 Tf
+(Python | Django | SQL | HTML5 | CSS3 | JavaScript) Tj
+0 -11 Td
+(- Built end-to-end voting app \\(backend and GUI\\) with candidate listing, vote casting, and live results using Django and SQL.) Tj
+0 -11 Td
+(- Implemented a one-vote-per-user policy using authentication and session validation.) Tj
+0 -15 Td
+/F1 9 Tf
+(Smart Student Management System) Tj
+0 -12 Td
+/F1 8 Tf
+(Python | Django | SQL | HTML5 | CSS3 | JavaScript) Tj
+0 -11 Td
+(- Developed student records management system with role-based access, admin dashboard, and RESTful CRUD services.) Tj
+0 -11 Td
+(- Added JavaScript form validation and dynamic content rendering to improve user interaction.) Tj
+0 -22 Td
+/F1 12 Tf
+(EDUCATION & CERTIFICATIONS) Tj
+0 -14 Td
+/F1 8 Tf
+(- Bachelor of Computer Applications \\(BCA\\) - CGPA: 8.5 | Sri Matha Degree College) Tj
+0 -11 Td
+(- Complete Python Full Stack Development Course | J Spiders, Bengaluru) Tj
+0 -11 Td
+(- Pre-University Course \\(PUC\\) - 70% | Little Flower Composite PU College) Tj
+0 -11 Td
+(- Introduction to Generative AI | Simplilearn SkillUp \\(Completed June 2026\\)) Tj
+0 -11 Td
+(- Programming with Python 3.x | Simplilearn SkillUp \\(Completed June 2026\\)) Tj
 0 -18 Td
-/F1 10 Tf
-(- ShopSphere: Full-Stack E-Commerce Web Application (Python, Django, DRF, SQLite, Tailwind CSS)) Tj
+/F1 12 Tf
+(LANGUAGES) Tj
 0 -14 Td
-(- College Voting Management System: End-to-end voting app with one-vote policy (Django, SQL, JS)) Tj
-0 -14 Td
-(- Smart Student Management System: Role-based access, admin dashboard, CRUD operations (Django, SQL)) Tj
-0 -30 Td
-/F1 14 Tf
-(CERTIFICATIONS) Tj
-0 -18 Td
-/F1 10 Tf
-(- Introduction to Generative AI - Simplilearn SkillUp (June 2026)) Tj
-0 -14 Td
-(- Programming with Python 3.x - Simplilearn SkillUp (June 2026)) Tj
+/F1 8 Tf
+(English | Hindi | Kannada | Telugu | Tamil) Tj
 ET`;
 
   const streamLen = Buffer.byteLength(content, 'utf8');

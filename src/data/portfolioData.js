@@ -1,40 +1,43 @@
 /**
- * Portfolio Data Configuration for M. S. Mohammad Abbas
- * Update this file to modify personal details, projects, experience, skills, and links.
+ * Portfolio Data Configuration for M S Mohammad Abbas
+ * Updated based on official resume
  */
 
 export const personalData = {
-  name: "M. S. Mohammad Abbas",
+  name: "M S Mohammad Abbas",
   shortName: "Abbas",
   initials: "MA",
-  title: "Software Engineer | Python & Django Full Stack Developer",
+  title: "Software Engineer | Full Stack Developer | Python | Django | REST APIs | JavaScript",
   headline: "Python Full Stack Developer & Software Engineer",
   greeting: "Hi, I'm",
   summary:
-    "I build web applications and REST APIs using Python, Django, and Django REST Framework. I also have hands-on experience with SQL, JavaScript, and enterprise application troubleshooting.",
+    "Entry-level Software Engineer (BCA, 8.5 CGPA) with hands-on experience building web applications, backend services, and REST APIs using Python, Django, and Django REST Framework. Experienced as a Junior Developer Trainee at Unique Force contributing to a live enterprise trade-finance application with Oracle Database 19c, JavaScript, and systemic troubleshooting.",
   location: "Bengaluru, Karnataka, India",
   email: "mohammedabbas50605@gmail.com",
   phone: "+91 74117 25609",
+  displayPhone: "+91 74117 25609",
   github: "https://github.com/MSAbbas-21",
+  githubUsername: "MSAbbas-21",
   linkedin: "https://linkedin.com/in/mohammed-abbas",
-  resumePath: "/resume.pdf", // Place your resume PDF in the public/ folder as resume.pdf
-  availability: "Available for Software Engineer & Full-Stack Developer roles",
-  experienceYears: "Entry-Level Professional",
+  linkedinUsername: "mohammed-abbas",
+  resumePath: "/resume.pdf",
   cgpa: "8.5 CGPA",
   degree: "BCA Graduate",
 };
 
 export const aboutData = {
+  summary:
+    "Entry-level Software Engineer (BCA, 8.5 CGPA) with hands-on experience across the software development life cycle: requirement analysis, design, coding, testing, debugging, and support. Junior Developer Trainee building and maintaining features for a live enterprise trade-finance application, with experience in version control, bug fixing, and code reviews. Full stack developer skilled in Python, Django, Django REST Framework, JavaScript, SQL, HTML5, CSS3, and Tailwind CSS, with experience building backend services, REST APIs, and user-centric GUIs. Completed Introduction to Generative AI certification. Seeking a Software Engineer role developing systems, cloud, and AI software in a collaborative team environment.",
   paragraphs: [
-    "I am an entry-level software engineer with a Bachelor of Computer Applications (BCA) degree and an 8.5 CGPA. Currently working as a Junior Developer Trainee at Unique Force, I contribute to enterprise application maintenance, Oracle Database 19c query optimization, client-side JavaScript functionality, and systemic application troubleshooting.",
-    "My core development focus is in Python, Django, and Django REST Framework, designing scalable REST APIs, structuring relational schemas, and developing clean, responsive interfaces. I hold deep respect for clean code principles, the software development life cycle (SDLC), version control workflows, and collaborating effectively with senior developers to deliver dependable solutions.",
-    "I am eager to contribute to forward-thinking engineering teams where I can leverage my backend expertise, database skills, and problem-solving drive across web applications, cloud technologies, and modern AI integrations."
+    "I am an entry-level software engineer with a BCA degree and an 8.5 CGPA from Sri Matha Degree College. Currently working as a Junior Developer Trainee at Unique Force, I contribute to a live enterprise trade-finance application involving Oracle Database 19c, JavaScript, and enterprise application technologies.",
+    "My development foundation centers on Python, Django, and Django REST Framework (DRF), building clean backend services, REST APIs, and responsive user-centric interfaces. I practice disciplined version control with Git and SVN, write structured SQL queries, and collaborate closely with senior developers to investigate bugs and implement fixes.",
+    "I hold a strong interest in software engineering, backend systems, database performance, cloud technologies, and AI integrations."
   ],
   highlights: [
-    { label: "Academic Standing", value: "8.5 CGPA (BCA)" },
-    { label: "Core Backend", value: "Python, Django, REST APIs" },
-    { label: "Enterprise Experience", value: "Junior Developer Trainee" },
-    { label: "Database Expertise", value: "Oracle 19c & SQLite" },
+    { label: "Academic Degree", value: "BCA (8.5 CGPA)" },
+    { label: "Enterprise Experience", value: "Unique Force Trainee" },
+    { label: "Primary Backend", value: "Python, Django, DRF" },
+    { label: "Enterprise Database", value: "Oracle 19c & SQL" },
   ]
 };
 
@@ -42,73 +45,88 @@ export const skillsCategories = [
   {
     title: "Programming Languages",
     icon: "Code2",
-    description: "Core languages used for backend logic, web programming, and data queries.",
+    description: "Core languages for backend services, client-side interactivity, and data queries.",
     skills: [
-      { name: "Python", level: "Primary", tag: "Backend & Scripting" },
-      { name: "JavaScript", level: "Proficient", tag: "ES6+ & DOM" },
-      { name: "SQL", level: "Proficient", tag: "Complex Queries & Joins" },
+      { name: "Python", tag: "Primary Backend" },
+      { name: "JavaScript", tag: "Client & ES6+" },
+      { name: "SQL", tag: "Oracle 19c & Relational" },
     ],
   },
   {
     title: "Backend Development",
     icon: "Server",
-    description: "Architecting web services, API endpoints, and server-side business logic.",
+    description: "Architecting web services, RESTful APIs, and server-side data models.",
     skills: [
-      { name: "Django", tag: "MVT Framework" },
-      { name: "Django REST Framework", tag: "Web APIs & Serializers" },
+      { name: "Django", tag: "MVT Architecture" },
+      { name: "Django REST Framework (DRF)", tag: "Web APIs & Serializers" },
       { name: "REST APIs", tag: "JSON Architecture" },
-      { name: "Django ORM", tag: "Database Abstraction" },
-      { name: "MVT Architecture", tag: "Application Design" },
-      { name: "CRUD Operations", tag: "Data Lifecycle" },
+      { name: "Backend Development", tag: "Business Logic" },
+      { name: "Django ORM", tag: "Query Optimization" },
+      { name: "MVT Architecture", tag: "Design Pattern" },
     ],
   },
   {
     title: "Frontend Development",
     icon: "Layout",
-    description: "Crafting structured, accessible, and responsive user interfaces.",
+    description: "Crafting modern, accessible, and responsive user-centric GUIs.",
     skills: [
       { name: "HTML5", tag: "Semantic Markup" },
       { name: "CSS3", tag: "Modern Styling" },
-      { name: "JavaScript", tag: "Client Interactivity" },
-      { name: "Tailwind CSS", tag: "Utility-First Design" },
+      { name: "JavaScript", tag: "Form Handling & Validation" },
+      { name: "Tailwind CSS", tag: "Utility-First" },
+      { name: "GUI Development", tag: "User-Centric Interfaces" },
       { name: "Responsive Web Design", tag: "Mobile & Desktop" },
     ],
   },
   {
     title: "Databases",
     icon: "Database",
-    description: "Relational database modeling, query execution, and troubleshooting.",
+    description: "Relational database schema modeling, query execution, and troubleshooting.",
     skills: [
-      { name: "SQLite", tag: "Development & Testing" },
+      { name: "SQLite", tag: "Development" },
       { name: "Oracle Database 19c", tag: "Enterprise Production" },
-      { name: "Relational Database Design", tag: "Normalization & Schema" },
+      { name: "Relational Database Design", tag: "Schema & Normalization" },
+      { name: "CRUD Operations", tag: "Data Lifecycle" },
     ],
   },
   {
-    title: "Tools & Concepts",
+    title: "Core Concepts",
     icon: "Cpu",
-    description: "Engineering workflows, debugging practices, and architectural principles.",
+    description: "Foundational software engineering principles and architectural patterns.",
     skills: [
-      { name: "Git and GitHub", tag: "Version Control" },
-      { name: "SVN / TortoiseSVN", tag: "Enterprise Source Control" },
-      { name: "VS Code", tag: "Development Environment" },
-      { name: "JSON", tag: "Data Serialization" },
-      { name: "Object-Oriented Programming", tag: "OOP Principles" },
-      { name: "Data Structures & Algorithms", tag: "Problem Solving" },
-      { name: "Debugging & Bug Fixing", tag: "Troubleshooting" },
+      { name: "OOP", tag: "Object-Oriented Design" },
+      { name: "Data Structures & Algorithms", tag: "Core CS" },
+      { name: "SDLC", tag: "Software Lifecycle" },
+      { name: "Requirement Analysis", tag: "Specs & Scope" },
+      { name: "Software Design", tag: "Architecture" },
       { name: "Authentication & Authorization", tag: "Access Control" },
       { name: "Session Management", tag: "State Handling" },
-      { name: "Software Development Life Cycle", tag: "SDLC Phases" },
     ],
   },
   {
-    title: "Other Exposure",
+    title: "Tools & Methodologies",
     icon: "Layers",
-    description: "Specialized enterprise platforms, emerging technologies, and integrations.",
+    description: "Enterprise tooling, version control, and debugging practices.",
     skills: [
+      { name: "Git", tag: "Source Control" },
+      { name: "GitHub", tag: "Collaboration" },
+      { name: "SVN (TortoiseSVN)", tag: "Enterprise Versioning" },
+      { name: "VS Code", tag: "IDE" },
+      { name: "JSON", tag: "Data Serialization" },
+      { name: "Debugging & Bug Fixing", tag: "Troubleshooting" },
+      { name: "Problem Determination", tag: "Root Cause Analysis" },
+      { name: "Code Reviews", tag: "Quality Assurance" },
+    ],
+  },
+  {
+    title: "AI & Integrations",
+    icon: "Sparkles",
+    description: "Emerging AI architectures and third-party enterprise integrations.",
+    skills: [
+      { name: "Generative AI (fundamentals)", tag: "Simplilearn Certified" },
+      { name: "REST API Integration", tag: "Third-Party Services" },
+      { name: "Full Stack Development", tag: "End-to-End Delivery" },
       { name: "IBM WebSphere Application Server 9", tag: "Enterprise Middleware" },
-      { name: "Generative AI Fundamentals", tag: "LLMs & AI Prompting" },
-      { name: "REST API Integration", tag: "Third-party Consumption" },
     ],
   },
 ];
@@ -120,24 +138,24 @@ export const experienceData = [
     company: "Unique Force",
     period: "May 2026 – Present",
     location: "Bengaluru, India",
-    type: "Full-Time Trainee",
-    summary:
-      "Working within an enterprise application environment to maintain system reliability, troubleshoot issues, optimize database operations, and support feature stabilization alongside senior engineers.",
+    type: "Enterprise Application Environment",
+    context: "Live Enterprise Trade-Finance Application",
     responsibilities: [
-      "Writing and executing Oracle SQL queries for data retrieval, validation, and troubleshooting.",
-      "Investigating issues across application and database layers.",
-      "Working with JavaScript for client-side functionality, form handling, and validation.",
-      "Gaining exposure to IBM WebSphere Application Server 9.",
-      "Assisting with application troubleshooting across frontend, application server, and database layers.",
-      "Collaborating with senior developers to investigate bugs and implement assigned fixes."
+      "Working in an enterprise application environment involving Oracle Database 19c, JavaScript, and web application technologies.",
+      "Writing and executing SQL queries in Oracle 19c for data retrieval, validation, and troubleshooting.",
+      "Analyzing application issues by tracing data between the application and database layers.",
+      "Working with JavaScript for client-side functionality, form handling, validation, and dynamic web-page behavior.",
+      "Gaining exposure to IBM WebSphere Application Server 9 and understanding its role in the enterprise application environment.",
+      "Assisting with application troubleshooting across the frontend, application server, and database layers.",
+      "Working with senior developers to investigate bugs, understand application workflows, and implement assigned fixes."
     ],
     technologies: [
       "Oracle Database 19c",
       "SQL",
       "JavaScript",
       "IBM WebSphere Application Server 9",
-      "SVN / TortoiseSVN",
-      "Application Debugging"
+      "SVN (TortoiseSVN)",
+      "Debugging & Bug Fixing"
     ]
   }
 ];
@@ -147,7 +165,7 @@ export const projectsData = [
     id: "shopsphere",
     title: "ShopSphere – Full-Stack E-Commerce Web Application",
     shortDescription:
-      "A complete full-stack e-commerce web platform featuring RESTful APIs for catalog and order lifecycle, secure authentication, and a responsive Tailwind CSS storefront.",
+      "A full-stack e-commerce application with RESTful APIs for product, category, cart, and order management, using Django REST Framework and Django ORM.",
     technologies: [
       "Python",
       "Django",
@@ -157,30 +175,27 @@ export const projectsData = [
       "Git"
     ],
     overview:
-      "ShopSphere is an end-to-end e-commerce solution engineered to demonstrate scalable web architecture, clean separation of concerns, and robust API development. It includes complete customer journey workflows from product discovery to checkout.",
+      "Analyzed requirements and developed a full-stack application with RESTful APIs for product, category, cart, and order management using Django REST Framework and Django ORM. Implemented authentication-related functionality, structured application data with Django models and relational database concepts, built responsive user-centric GUIs using Tailwind CSS, and maintained structured version history on GitHub.",
     highlights: [
-      "Developed a full-stack e-commerce application with modular Django apps.",
-      "Created REST APIs for product, category, cart, and order management using Django REST Framework.",
-      "Used Django models and Django ORM for application data persistence and query optimization.",
-      "Implemented authentication-related functionality including user registration and session verification.",
-      "Built responsive user interfaces using Tailwind CSS with mobile-first design principles.",
-      "Maintained project version history using Git and GitHub with structured commit practices."
+      "Analyzed requirements and developed a full stack application with RESTful APIs for product, category, cart, and order management, using Django REST Framework and Django ORM.",
+      "Implemented authentication-related functionality and structured application data using Django models and relational database concepts.",
+      "Built responsive, user-centric GUI interfaces using Tailwind CSS and integrated them with the backend APIs.",
+      "Maintained the project using Git and GitHub with structured version history."
     ],
     architecture: {
-      backend: "Django with Django REST Framework providing serialized JSON endpoints.",
-      database: "Relational data modeling with Django ORM for Products, Orders, Order Items, and Cart states.",
-      security: "User authentication, protected endpoints, CSRF protection, and permission validation.",
-      ui: "Tailwind CSS components structured for cross-device responsiveness."
+      backend: "Django & Django REST Framework (DRF) viewsets, serializers, and custom endpoint controllers.",
+      database: "Relational database schema modeling for Users, Products, Categories, Cart, and Order states.",
+      security: "User authentication, protected API endpoints, permission validation, and CSRF tokens.",
+      ui: "Tailwind CSS responsive design with user-centric shopping flows and clean mobile support."
     },
-    // Real URLs can be supplied here. Empty string hides the button automatically.
-    githubUrl: "", // Example: "https://github.com/MSAbbas-21/shopsphere"
-    demoUrl: "",   // Example: "https://shopsphere-demo.vercel.app"
+    githubUrl: "",
+    demoUrl: "",
   },
   {
     id: "college-voting",
     title: "College Voting Management System",
     shortDescription:
-      "An end-to-end voting management application enforcing a strict one-vote-per-user policy through session validation, candidate listings, and instant results calculation.",
+      "An end-to-end voting management application (backend and GUI) with candidate listing, vote casting, and live results using Django and SQL.",
     technologies: [
       "Python",
       "Django",
@@ -190,18 +205,16 @@ export const projectsData = [
       "JavaScript"
     ],
     overview:
-      "Designed to streamline college student elections, this application replaces manual ballots with a secure digital voting process. It prevents ballot manipulation by strictly validating user credentials and session tokens.",
+      "Designed and developed an end-to-end voting management application (backend and GUI) with candidate listing, vote casting, and live results using Django and SQL. Implemented a strict one-vote-per-user policy using authentication and session validation.",
     highlights: [
-      "Built an end-to-end voting management application using Django's MVT architecture.",
-      "Implemented candidate listing and intuitive vote casting interfaces.",
-      "Added a one-vote-per-user policy using authentication and session validation to guarantee election integrity.",
-      "Developed a real-time results interface that tallies and computes outcomes accurately."
+      "Designed and developed an end-to-end voting management application (backend and GUI) with candidate listing, vote casting, and live results using Django and SQL.",
+      "Implemented a one-vote-per-user policy using authentication and session validation to guarantee election integrity."
     ],
     architecture: {
-      backend: "Django application with custom views handling ballot verification and tallying.",
-      database: "Relational SQL database tracking voter status, ballot logs, and candidate aggregates.",
-      security: "Double-voting prevention with unique voter tokens and authenticated session checks.",
-      ui: "Clean, accessible HTML5/CSS3 interface with JavaScript confirmation prompts."
+      backend: "Django MVT application managing ballot authentication, session verification, and tallying.",
+      database: "SQL relational tables tracking encrypted voter registration, candidates, and cast votes.",
+      security: "Double-voting prevention with session validation and single-use voter status checks.",
+      ui: "HTML5/CSS3 interface with JavaScript confirmation dialogs and dynamic results rendering."
     },
     githubUrl: "",
     demoUrl: "",
@@ -210,7 +223,7 @@ export const projectsData = [
     id: "smart-student-mgmt",
     title: "Smart Student Management System",
     shortDescription:
-      "A comprehensive student records management system with role-based administrative dashboards, dynamic CRUD operations, and client-side form validation.",
+      "A student records management system with role-based access, admin dashboard, and RESTful CRUD services.",
     technologies: [
       "Python",
       "Django",
@@ -220,18 +233,16 @@ export const projectsData = [
       "JavaScript"
     ],
     overview:
-      "An administrative platform built for educational institutions to manage student enrollment, academic tracking, and department categorization. Features role-based views ensuring sensitive academic records are strictly governed.",
+      "Designed and developed a student records management system with role-based access, admin dashboard, and RESTful CRUD services. Added JavaScript form validation and dynamic content rendering to improve user interaction.",
     highlights: [
-      "Developed a student records management system supporting full lifecycle student data.",
-      "Implemented role-based access control and an intuitive admin dashboard.",
-      "Created complete CRUD functionality for student records, enrollment statuses, and profiles.",
-      "Added JavaScript form validation and dynamic content rendering for a smooth user experience."
+      "Designed and developed a student records management system with role-based access, admin dashboard, and RESTful CRUD services.",
+      "Added JavaScript form validation and dynamic content rendering to improve user interaction."
     ],
     architecture: {
-      backend: "Django MVT architecture with robust view logic and model validation.",
-      database: "Structured SQL tables for student records, course mappings, and administrative privileges.",
-      security: "Role-based permissions separating administrator tasks from read-only viewers.",
-      ui: "Interactive dashboards with real-time field validation and filterable tables."
+      backend: "Django views & RESTful CRUD services handling student registration, records, and departmental data.",
+      database: "Relational SQL database tables with normalized student profiles and administrative roles.",
+      security: "Role-based access control (RBAC) ensuring segregated administrator vs staff permissions.",
+      ui: "Dynamic administrative dashboard with client-side JavaScript validation and live data rendering."
     },
     githubUrl: "",
     demoUrl: "",
@@ -245,19 +256,17 @@ export const educationData = [
     institution: "Sri Matha Degree College",
     period: "Graduated",
     score: "CGPA: 8.5",
-    description:
-      "Graduated with distinction with an 8.5 CGPA. Focused coursework included Object-Oriented Programming, Data Structures, Relational Database Management Systems (RDBMS), Operating Systems, and Web Application Development.",
+    description: "Undergraduate degree in Computer Applications with an 8.5 CGPA, focusing on Object-Oriented Programming, Data Structures, Relational Database Management Systems, and Web Application Development.",
     badge: "8.5 CGPA"
   },
   {
     id: "edu-jspiders",
     degree: "Complete Python Full Stack Development Course",
     institution: "J Spiders, Bengaluru",
-    period: "Professional Training",
-    score: "Certified Full Stack Trainee",
-    description:
-      "Intensive practical training covering core Python, advanced Object-Oriented Programming, Django MVT framework, Django REST Framework, SQL schema design, and front-end essentials (HTML5, CSS3, JavaScript).",
-    badge: "Full Stack Specialization"
+    period: "Specialized Training",
+    score: "Full Stack Specialization",
+    description: "Hands-on professional full-stack training covering Python, Django, Django REST Framework, SQL schema design, and front-end essentials (HTML5, CSS3, JavaScript).",
+    badge: "J Spiders, Bengaluru"
   },
   {
     id: "edu-puc",
@@ -265,8 +274,7 @@ export const educationData = [
     institution: "Little Flower Composite PU College",
     period: "Completed",
     score: "Percentage: 70%",
-    description:
-      "Completed pre-university education with strong academic focus on analytical thinking, mathematics, and foundational science curricula.",
+    description: "Pre-university coursework focused on mathematics, analytical science, and foundational computer curricula.",
     badge: "70%"
   }
 ];
@@ -277,8 +285,8 @@ export const certificationsData = [
     title: "Introduction to Generative AI",
     issuer: "Simplilearn SkillUp",
     date: "Completed June 2026",
-    description: "Foundational training in Generative AI architectures, Large Language Models (LLMs), prompt engineering fundamentals, and real-world AI applications.",
-    credentialUrl: "", // Supply URL if available
+    description: "Foundational certification exploring Generative AI concepts, LLM architectures, prompt engineering, and modern AI implementations.",
+    credentialUrl: "", // Paste certificate link when available
     skills: ["Generative AI", "LLMs", "Prompt Engineering"]
   },
   {
@@ -286,10 +294,18 @@ export const certificationsData = [
     title: "Programming with Python 3.x",
     issuer: "Simplilearn SkillUp",
     date: "Completed June 2026",
-    description: "Hands-on certification validating proficiency in Python 3.x syntax, data structures, OOP principles, functions, file handling, and modular development.",
-    credentialUrl: "", // Supply URL if available
-    skills: ["Python 3.x", "OOP", "Data Structures", "Problem Solving"]
+    description: "Practical certification validating proficiency in Python 3.x core syntax, OOP principles, data structures, and modular backend programming.",
+    credentialUrl: "", // Paste certificate link when available
+    skills: ["Python 3.x", "OOP", "Data Structures", "Functions"]
   }
+];
+
+export const languagesData = [
+  { name: "English", proficiency: "Professional Working Proficiency" },
+  { name: "Hindi", proficiency: "Working Proficiency" },
+  { name: "Kannada", proficiency: "Working Proficiency" },
+  { name: "Telugu", proficiency: "Working Proficiency" },
+  { name: "Tamil", proficiency: "Working Proficiency" },
 ];
 
 export const contactData = {
@@ -301,6 +317,5 @@ export const contactData = {
   githubUsername: "MSAbbas-21",
   linkedin: "https://linkedin.com/in/mohammed-abbas",
   linkedinUsername: "mohammed-abbas",
-  // Form submission: Can be connected to Formspree, Formkeep, or EmailJS
-  formspreeEndpoint: "", // Optional: e.g. "https://formspree.io/f/xyz"
+  formspreeEndpoint: "",
 };

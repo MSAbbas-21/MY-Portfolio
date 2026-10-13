@@ -7,7 +7,8 @@ import {
   Database, 
   Cpu, 
   Layers,
-  CheckCircle2
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 
 // Icon mapping
@@ -18,6 +19,7 @@ const ICON_MAP = {
   Database: Database,
   Cpu: Cpu,
   Layers: Layers,
+  Sparkles: Sparkles,
 };
 
 export default function Skills() {
