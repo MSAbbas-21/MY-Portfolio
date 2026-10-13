@@ -1,0 +1,142 @@
+import fs from 'fs';
+
+// Helper to generate a clean PDF containing resume content
+function createSimplePdf() {
+  const content = `BT
+/F1 20 Tf
+50 780 Td
+(M. S. Mohammad Abbas) Tj
+0 -26 Td
+/F1 12 Tf
+(Software Engineer | Python & Django Full Stack Developer) Tj
+0 -20 Td
+/F1 10 Tf
+(Email: mohammedabbas50605@gmail.com | Phone: +91 74117 25609) Tj
+0 -15 Td
+(GitHub: github.com/MSAbbas-21 | LinkedIn: linkedin.com/in/mohammed-abbas) Tj
+0 -30 Td
+/F1 14 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -18 Td
+/F1 10 Tf
+(Entry-level software engineer with a BCA degree (8.5 CGPA) and hands-on experience as a Junior Developer Trainee) Tj
+0 -14 Td
+(at Unique Force. Proficient in Python, Django, REST APIs, SQL, JavaScript, and enterprise application troubleshooting.) Tj
+0 -30 Td
+/F1 14 Tf
+(WORK EXPERIENCE) Tj
+0 -18 Td
+/F1 11 Tf
+(Junior Developer Trainee - Unique Force (May 2026 - Present)) Tj
+0 -16 Td
+/F1 10 Tf
+(- Writing and executing Oracle SQL queries for data retrieval, validation, and troubleshooting.) Tj
+0 -14 Td
+(- Investigating issues across application and database layers.) Tj
+0 -14 Td
+(- Developing client-side functionality and form validation with JavaScript.) Tj
+0 -14 Td
+(- Gained exposure to IBM WebSphere Application Server 9 and assisted with application troubleshooting.) Tj
+0 -14 Td
+(- Collaborated with senior developers to investigate bugs and implement assigned fixes.) Tj
+0 -30 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -18 Td
+/F1 10 Tf
+(- Bachelor of Computer Applications (BCA) - Sri Matha Degree College | CGPA: 8.5) Tj
+0 -14 Td
+(- Complete Python Full Stack Development Course - J Spiders, Bengaluru) Tj
+0 -14 Td
+(- Pre-University Course (PUC) - Little Flower Composite PU College | 70%) Tj
+0 -30 Td
+/F1 14 Tf
+(PROJECTS) Tj
+0 -18 Td
+/F1 10 Tf
+(- ShopSphere: Full-Stack E-Commerce Web Application (Python, Django, DRF, SQLite, Tailwind CSS)) Tj
+0 -14 Td
+(- College Voting Management System: End-to-end voting app with one-vote policy (Django, SQL, JS)) Tj
+0 -14 Td
+(- Smart Student Management System: Role-based access, admin dashboard, CRUD operations (Django, SQL)) Tj
+0 -30 Td
+/F1 14 Tf
+(CERTIFICATIONS) Tj
+0 -18 Td
+/F1 10 Tf
+(- Introduction to Generative AI - Simplilearn SkillUp (June 2026)) Tj
+0 -14 Td
+(- Programming with Python 3.x - Simplilearn SkillUp (June 2026)) Tj
+ET`;
+
+  const streamLen = Buffer.byteLength(content, 'utf8');
+
+  const pdf = `%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+    >>
+  >>
+>>
+endobj
+
+4 0 obj
+<<
+  /Length ${streamLen}
+>>
+stream
+${content}
+endstream
+endobj
+
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+000000${String(335 + streamLen).padStart(10, '0')} 00000 n 
+trailer
+<<
+  /Size 6
+  /Root 1 0 R
+>>
+startxref
+${410 + streamLen}
+%%EOF`;
+
+  fs.writeFileSync('./public/resume.pdf', pdf);
+  console.log('Successfully generated public/resume.pdf');
+}
+
+createSimplePdf();
